@@ -1,1 +1,56 @@
+/* 1. Import Inter (400 for Regular, 700 for Bold) from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* 2. Initialize Tailwind */
 @import "tailwindcss";
+
+@theme {
+ 
+  --font-inter: "Inter", sans-serif; 
+
+  /* Breakpoints */
+  --breakpoint-xsm: 375px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-recommend: 1440px;
+  --breakpoint-large: 1700px;
+}
+
+/* 4. Custom Container Utilities */
+.custom-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px 20px; /* mobile default */
+}
+
+/* ≥768px (tablet) */
+@media (min-width: 768px) {
+  .custom-container {
+    padding: 32px;
+  }
+}
+
+/* ≥1024px (small desktop) */
+@media (min-width: 1024px) {
+  .custom-container {
+    padding: 48px;
+  }
+}
+
+/* ≥1280px (large desktop) */
+@media (min-width: 1280px) {
+  .custom-container {
+    padding: 60px;
+  }
+}
+
+/* ≥1440px (recommended breakpoint) */
+@media (min-width: 1440px) {
+  .custom-container {
+    padding: 68px 88px; /* top/bottom = 68px, left/right = 88px */
+  }
+}
+

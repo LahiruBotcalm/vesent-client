@@ -8,34 +8,34 @@ const Hero: React.FC = () => {
       <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[600px] w-[800px] -translate-x-1/2 -translate-y-1/2 opacity-20 bg-indigo-600 blur-[120px]" />
 
       {/* 1. Badge / Pill */}
-      <div className="mb-8 inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 backdrop-blur-sm">
-        <span className="text-sm font-medium text-slate-300">
+      <div className="mb-8 inline-flex items-center rounded-full border border-white/10 bg-[#FFFFFF1A] px-4 py-1.5 backdrop-blur-sm font-inter font-normal">
+        <span className="text-sm font-medium text-[#ACACAC]">
           Risk Intelligence for the Digital World
         </span>
       </div>
 
       {/* 2. Main Headline */}
-      <h1 className="max-w-4xl text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-        <span className="text-indigo-300">Enterprise Compliance</span> Platform
+      <h1 className="max-w-4xl text-[32px] tracking-tight text-white sm:text-6xl lg:text-[68px] font-inter font-medium">
+        <span className="text-[#A3B8FF]">Enterprise Compliance</span> Platform
         <br />
         for High Risk Industries
       </h1>
 
       {/* 3. Subheadline */}
-      <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-400">
+      <p className="mt-6 max-w-2xl text-[14px] lg:text-[16px] leading-relaxed text-white font-inter font-normal">
         Real time AML screening, fraud prevention, and intelligent case management. 
         Built for gaming, crypto, and fintech companies that demand institutional grade compliance.
       </p>
 
       {/* 4. CTA Buttons */}
-      <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:gap-6">
+      <div className="mt-10 flex items-center gap-[24px] flex-row ">
         {/* 'View Features' - Outlined Button */}
-        <button className="min-w-[160px] rounded-lg border border-slate-700 bg-transparent px-6 py-3 text-sm font-medium text-white transition-all hover:bg-white/5 hover:border-slate-500">
+        <button className="min-w-[160px] rounded-lg border border-[#A3B8FF] bg-transparent px-[20px] py-[12px] text-[14px] font-medium text-[#A3B8FF] transition-all hover:bg-white/5 hover:text-white hover:border-white cursor-pointer duration-300">
           View Features
         </button>
 
         {/* 'Schedule Demo' - Solid Blue Button */}
-        <button className="min-w-[160px] rounded-lg bg-[#a5b4fc] px-6 py-3 text-sm font-bold text-slate-900 transition-all hover:bg-[#818cf8]">
+        <button className="min-w-[160px] rounded-lg bg-[#A3B8FF] px-[20px] py-[12px] text-[14px] font-inter font-bold text-slate-900 transition-all hover:bg-[#818cf8] cursor-pointer duration-300">
           Schedule Demo
         </button>
       </div>
