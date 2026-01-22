@@ -1,16 +1,14 @@
-
-/* eslint-disable react/no-unknown-property */
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { forwardRef, useRef, useMemo, useLayoutEffect } from 'react';
-import * as THREE from 'three';
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { forwardRef, useRef, useMemo, useLayoutEffect } from "react";
+import * as THREE from "three";
 
 const hexToNormalizedRGB = (hex: string) => {
-    hex = hex.replace('#', '');
-    return [
-        parseInt(hex.slice(0, 2), 16) / 255,
-        parseInt(hex.slice(2, 4), 16) / 255,
-        parseInt(hex.slice(4, 6), 16) / 255
-    ] as [number, number, number];
+  hex = hex.replace("#", "");
+  return [
+    parseInt(hex.slice(0, 2), 16) / 255,
+    parseInt(hex.slice(2, 4), 16) / 255,
+    parseInt(hex.slice(4, 6), 16) / 255,
+  ] as [number, number, number];
 };
 
 const vertexShader = `
@@ -71,61 +69,75 @@ void main() {
 `;
 
 interface SilkPlaneProps {
-    uniforms: any;
+  uniforms: any;
 }
 
-const SilkPlane = forwardRef<THREE.Mesh, SilkPlaneProps>(function SilkPlane({ uniforms }, ref) {
-    const { viewport } = useThree();
+const SilkPlane = forwardRef<THREE.Mesh, SilkPlaneProps>(function SilkPlane(
+  { uniforms },
+  ref
+) {
+  const { viewport } = useThree();
 
-    useLayoutEffect(() => {
-        if (ref && 'current' in ref && ref.current) {
-            ref.current.scale.set(viewport.width, viewport.height, 1);
-        }
-    }, [ref, viewport]);
+  useLayoutEffect(() => {
+    if (ref && "current" in ref && ref.current) {
+      ref.current.scale.set(viewport.width, viewport.height, 1);
+    }
+  }, [ref, viewport]);
 
-    useFrame((_, delta) => {
-        if (ref && 'current' in ref && ref.current) {
-            (ref.current.material as THREE.ShaderMaterial).uniforms.uTime.value += 0.1 * delta;
-        }
-    });
+  useFrame((_, delta) => {
+    if (ref && "current" in ref && ref.current) {
+      (ref.current.material as THREE.ShaderMaterial).uniforms.uTime.value +=
+        0.1 * delta;
+    }
+  });
 
-    return (
-        <mesh ref={ref}>
-            <planeGeometry args={[1, 1, 1, 1]} />
-            <shaderMaterial uniforms={uniforms} vertexShader={vertexShader} fragmentShader={fragmentShader} />
-        </mesh>
-    );
+  return (
+    <mesh ref={ref}>
+      <planeGeometry args={[1, 1, 1, 1]} />
+      <shaderMaterial
+        uniforms={uniforms}
+        vertexShader={vertexShader}
+        fragmentShader={fragmentShader}
+      />
+    </mesh>
+  );
 });
-SilkPlane.displayName = 'SilkPlane';
+SilkPlane.displayName = "SilkPlane";
 
 interface SilkProps {
-    speed?: number;
-    scale?: number;
-    color?: string;
-    noiseIntensity?: number;
-    rotation?: number;
+  speed?: number;
+  scale?: number;
+  color?: string;
+  noiseIntensity?: number;
+  rotation?: number;
 }
 
-const Silk = ({ speed = 5, scale = 1, color = '#7B7481', noiseIntensity = 1.5, rotation = 0 }: SilkProps) => {
-    const meshRef = useRef<THREE.Mesh>(null);
+const Silk = ({
+  speed = 5,
+  scale = 1,
+  color = "#7B7481",
+  noiseIntensity = 1.5,
+  rotation = 0,
+}: SilkProps) => {
+  const meshRef = useRef<THREE.Mesh>(null);
 
-    const uniforms = useMemo(
-        () => ({
-            uSpeed: { value: speed },
-            uScale: { value: scale },
-            uNoiseIntensity: { value: noiseIntensity },
-            uColor: { value: new THREE.Color(...hexToNormalizedRGB(color)) },
-            uRotation: { value: rotation },
-            uTime: { value: 0 }
-        }),
-        [speed, scale, noiseIntensity, color, rotation]
-    );
+  const uniforms = useMemo(
+    () => ({
+      uSpeed: { value: speed },
+      uScale: { value: scale },
+      uNoiseIntensity: { value: noiseIntensity },
+      uColor: { value: new THREE.Color(...hexToNormalizedRGB(color)) },
+      uRotation: { value: rotation },
+      uTime: { value: 0 },
+    }),
+    [speed, scale, noiseIntensity, color, rotation]
+  );
 
-    return (
-        <Canvas dpr={[1, 2]} frameloop="always">
-            <SilkPlane ref={meshRef} uniforms={uniforms} />
-        </Canvas>
-    );
+  return (
+    <Canvas dpr={[1, 2]} frameloop="always">
+      <SilkPlane ref={meshRef} uniforms={uniforms} />
+    </Canvas>
+  );
 };
 
 export default Silk;

@@ -6,18 +6,12 @@ import {
 } from "react-icons/hi";
 import { FaLinkedinIn, FaFacebookF, FaXTwitter } from "react-icons/fa6";
 
-// Note: If you don't have react-icons/fa6 installed, you can use 'react-icons/fa'
-// and swap FaXTwitter for FaTwitter, or install the latest version.
-
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-white pt-20 pb-10 px-4 sm:px-6 lg:px-8 border-t border-gray-100">
-      <div className="mx-auto max-w-7xl">
-        {/* TOP SECTION: Grid Layout */}
+    <footer className="bg-white pt-20 pb-10 px-[20px] md:px-[80px] border-t border-gray-100">
+      <div className="mx-auto">
         <div className="grid grid-cols-2 gap-12 lg:grid-cols-12 lg:gap-8">
-          {/* LEFT COLUMN: Brand & Contact (Spans 5 columns on large screens, Full width on mobile) */}
           <div className="col-span-2 lg:col-span-5">
-            {/* Logo */}
             <div className="mb-6 flex items-center">
               <img
                 src="/assets/logob.png"
@@ -31,9 +25,7 @@ const Footer: React.FC = () => {
               gaming, crypto, and fintech companies.
             </p>
 
-            {/* Contact Details */}
             <div className="space-y-4">
-              {/* Address */}
               <div className="flex items-start gap-3">
                 <HiOutlineOfficeBuilding className="mt-0.5 h-5 w-5 shrink-0 text-[#1e293b]" />
                 <span className="text-[14px] font-inter font-normal text-black">
@@ -41,7 +33,6 @@ const Footer: React.FC = () => {
                 </span>
               </div>
 
-              {/* Email */}
               <div className="flex items-center gap-3">
                 <HiOutlineMail className="h-5 w-5 shrink-0 text-[#1e293b]" />
                 <a
@@ -52,7 +43,6 @@ const Footer: React.FC = () => {
                 </a>
               </div>
 
-              {/* Phone */}
               <div className="flex items-center gap-3">
                 <HiOutlinePhone className="h-5 w-5 shrink-0 text-[#1e293b]" />
                 <span className="text-[14px] font-inter font-normal text-black">
@@ -62,8 +52,6 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Legal Section */}
-          {/* Takes 1 column on mobile (default), 2 columns on desktop */}
           <div className="lg:col-span-2 lg:col-start-8">
             <h3 className="text-[14px] font-inter font-bold text-black">
               Legal
@@ -84,8 +72,6 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Quick Links Section */}
-          {/* Takes 1 column on mobile (default), 2 columns on desktop */}
           <div className="lg:col-span-2 lg:col-start-11">
             <h3 className="text-[14px] font-inter font-bold text-black">
               Quick Links
@@ -105,15 +91,12 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* BOTTOM SECTION: Divider, Copyright, Socials */}
         <div className="mt-16 border-t border-gray-100 pt-8">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-            {/* Copyright */}
             <p className="text-sm text-slate-400">
               2025 VESANT.AI © All Rights Reserved
             </p>
 
-            {/* Social Icons */}
             <div className="flex gap-6">
               <a
                 href="#"
@@ -127,7 +110,6 @@ const Footer: React.FC = () => {
                 className="text-[#334155] transition-colors hover:text-indigo-600"
               >
                 <FaFacebookF className="h-4 w-4" />{" "}
-                {/* Slightly smaller to visually match height */}
                 <span className="sr-only">Facebook</span>
               </a>
               <a

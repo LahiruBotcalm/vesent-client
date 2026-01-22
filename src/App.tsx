@@ -11,7 +11,7 @@ import Footer from './components/Footer';
 function App() {
 
   return (
-      <div className="bg-black mx-auto w-full max-w-[1920px]">
+      <div className="bg-black mx-auto w-full max-w-[1920px] scroll-smooth">
         <Navbar />
         <Hero/>
         <AboutUs/>

@@ -34,7 +34,6 @@ const INDUSTRIES = [
 const Industries: React.FC = () => {
   const CardContent = ({ item }: { item: (typeof INDUSTRIES)[number] }) => (
     <>
-      {/* Background Image – subtle overlay */}
       <div className="absolute inset-0">
         <img
           src={item.image}
@@ -43,7 +42,6 @@ const Industries: React.FC = () => {
         />
       </div>
 
-      {/* Text Content */}
       <div className="relative z-10 flex flex-col h-full">
         <h3 className="mb-4 text-[32px] font-medium font-inter text-[#252525]">
           {item.title}
@@ -56,11 +54,13 @@ const Industries: React.FC = () => {
   );
 
   return (
-    <section className="bg-white py-16 md:py-20 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
-        {/* Section Header */}
+    <section
+      id="industries"
+      className="bg-white py-16 md:py-20 px-[20px] md:px-[80px] "
+    >
+      <div className="mx-auto">
         <div className="mb-12 md:mb-16 text-left">
-          <h2 className="text-4xl md:text-5xl lg:text-[56px] font-medium text-[#142E82]">
+          <h2 className="text-[32px] md:text-5xl lg:text-[56px] font-medium text-[#142E82]">
             Built for Regulated Industries
           </h2>
           <p className="mt-5 md:mt-6 text-lg md:text-xl text-[#252525] leading-relaxed max-w-3xl">
@@ -70,20 +70,19 @@ const Industries: React.FC = () => {
           </p>
         </div>
 
-        {/* Desktop Grid (md and up) */}
-        <div className="hidden md:grid md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="hidden md:grid md:grid-cols-3 gap-6 lg:gap-0">
           {INDUSTRIES.map((item, index) => (
             <div
               key={index}
               className="
                   relative 
-                  min-h-[420px] 
-                  rounded-2xl 
+                  min-h-[420px]
+                  h-[460px]
                   overflow-hidden 
                   bg-slate-50 
                   shadow-md 
                   hover:shadow-xl 
-                  transition-all duration-300
+                  transition-all  cursor-pointer duration-300
                   p-8 lg:p-10
                 "
             >
@@ -92,7 +91,6 @@ const Industries: React.FC = () => {
           ))}
         </div>
 
-        {/* Mobile Slider (below md) */}
         <div className="md:hidden">
           <Swiper
             modules={[Pagination]}
