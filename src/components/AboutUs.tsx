@@ -31,7 +31,7 @@ const AboutUs: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 gap-0 md:grid-cols-3">
-          <div className="flex h-64 flex-col justify-center bg-[#1b2c7c]/95 backdrop-blur-sm p-8 text-left text-white transition-transform hover:scale-[1.02] cursor-pointer duration-300">
+          <div className="flex h-64 flex-col justify-center bg-[#1b2c7c]/95 backdrop-blur-sm p-8 text-left text-white transition-transform cursor-pointer duration-300">
             <span className="mb-2 text-[20px] font-inter font-medium text-[#8FA9FF]">
               Uptime SLA
             </span>
@@ -40,7 +40,7 @@ const AboutUs: React.FC = () => {
             </span>
           </div>
 
-          <div className="flex h-64 flex-col justify-center bg-[#A3B8FF]/95 backdrop-blur-sm p-8 text-left md:text-center text-white shadow-lg transition-transform hover:scale-[1.02] md:mt-63 cursor-pointer duration-300">
+          <div className="flex h-64 flex-col justify-center bg-[#A3B8FF]/95 backdrop-blur-sm p-8 text-left md:text-center text-white shadow-lg transition-transform md:mt-63 cursor-pointer duration-300">
             <span className="mb-2 text-[20px] font-medium text-[#142E82]">
               Response Time
             </span>
@@ -49,7 +49,7 @@ const AboutUs: React.FC = () => {
             </span>
           </div>
 
-          <div className="flex h-64 flex-col justify-center bg-[#1b2c7c]/95 backdrop-blur-sm p-8 text-left md:text-right text-white transition-transform hover:scale-[1.02] cursor-pointer duration-300">
+          <div className="flex h-64 flex-col justify-center bg-[#1b2c7c]/95 backdrop-blur-sm p-8 text-left md:text-right text-white transition-transform cursor-pointer duration-300">
             <span className="mb-2 text-[20px] font-inter font-medium text-[#8FA9FF]">
               Monitoring
             </span>

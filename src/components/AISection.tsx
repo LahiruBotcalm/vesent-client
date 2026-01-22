@@ -1,5 +1,6 @@
 import React from "react";
 import { HiChevronRight } from "react-icons/hi";
+import { motion } from "framer-motion";
 
 const QUERIES = [
   "Show me all high-risk customers from the last 7 days",
@@ -43,14 +44,38 @@ const AISection: React.FC = () => {
             </div>
           </div>
 
-          <div
-            className="lg:col-span-5 2xl:col-span-9 relative overflow-hidden rounded-2xl border border-slate-100 shadow-sm p-8 lg:p-10 2xl:p-12 
-    bg-gradient-to-br from-[#b0c6ff] to-white md:bg-none md:bg-white"
+          <motion.div
+            initial="rest"
+            whileHover="hover"
+            animate="rest"
+            className="
+    lg:col-span-5 2xl:col-span-9 
+    relative overflow-hidden rounded-2xl border border-slate-100 shadow-sm 
+    p-8 lg:p-10 2xl:p-12 
+    bg-white
+    group
+  "
           >
-            <img
+            <motion.div
+              variants={{
+                rest: { opacity: 0 },
+                hover: { opacity: 1, transition: { duration: 0.4 } },
+              }}
+              className="absolute inset-0 bg-gradient-to-br from-[#b0c6ff] to-white z-0 pointer-events-none"
+            />
+
+            <motion.img
               src="/assets/stars.png"
               alt="Decorative stars"
-              className="absolute -right-6 -top-6 w-40 object-contain pointer-events-none md:hidden"
+              variants={{
+                rest: { x: 100, opacity: 0 },
+                hover: {
+                  x: 0,
+                  opacity: 1,
+                  transition: { duration: 0.5, type: "spring", bounce: 0.3 },
+                },
+              }}
+              className="absolute -right-6 -top-6 w-40 object-contain pointer-events-none z-10"
             />
 
             <div className="relative z-10">
@@ -66,26 +91,27 @@ const AISection: React.FC = () => {
                 {QUERIES.map((query, index) => (
                   <button
                     key={index}
-                    className="group flex w-full items-center justify-between rounded-full border border-slate-200 p-2 pl-6 transition-all hover:border-indigo-300 hover:shadow-md
-            bg-white/80 md:bg-white  cursor-pointer duration-300"
+                    className="
+            group/btn flex w-full items-center justify-between rounded-full 
+            border border-slate-200 p-2 pl-6 
+            bg-white
+            transition-all duration-300
+            hover:border-indigo-300 hover:shadow-md 
+            cursor-pointer
+          "
                   >
                     <span className="truncate text-left text-[14px] font-medium text-[#252525]">
                       {query}
                     </span>
 
-                    <div
-                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full shadow-sm transition-all 
-              bg-gradient-to-b from-[#6384ff] to-[#466ae6] text-white 
-              md:bg-none md:bg-slate-50 md:text-slate-400 
-              md:group-hover:bg-indigo-50 md:group-hover:text-indigo-600 md:group-hover:scale-100 group-hover:scale-105"
-                    >
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full shadow-sm transition-all duration-300 bg-slate-50 text-slate-400  group-hover/btn:bg-[radial-gradient(circle,#9eb1f1,#dbeafe_80%)] group-hover/btn:text-indigo-600 group-hover/btn:scale-105  ">
                       <HiChevronRight className="h-5 w-5" />
                     </div>
                   </button>
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
