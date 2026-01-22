@@ -4,6 +4,7 @@
 /* 2. Initialize Tailwind */
 @import "tailwindcss";
 
+
 @theme {
  
   --font-inter: "Inter", sans-serif; 
