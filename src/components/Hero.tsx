@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* 2. Main Headline */}
-      <h1 className="max-w-4xl text-[32px] tracking-tight text-white sm:text-6xl lg:text-[68px] font-inter font-medium">
+      <h1 className="text-[32px] tracking-tight text-white sm:text-6xl lg:text-[68px] font-inter font-medium">
         <span className="text-[#A3B8FF]">Enterprise Compliance</span> Platform
         <br />
         for High Risk Industries

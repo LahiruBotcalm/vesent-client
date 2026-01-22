@@ -3,7 +3,7 @@ import React from 'react';
 const AboutUs: React.FC = () => {
   return (
     <section className="bg-white py-20 ">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto ">
         
         {/* 1. Top Section: Header & Description */}
         <div className="mb-24 flex flex-col gap-10 md:flex-row md:items-start md:justify-between px-[20px] md:px-[80px]">
@@ -16,8 +16,8 @@ const AboutUs: React.FC = () => {
           </div>
 
           {/* Main Paragraph (Right side) */}
-          <div className="md:w-3/4">
-            <p className="text-[28px] lg:text-[32px] leading-relaxed text-[#B0B0B0] font-inter font-medium">
+          <div className="md:w-[963px]">
+            <p className="text-[28px] lg:text-[32px] leading-relaxed text-[#B0B0B0] font-inter font-medium text-right">
               <span className="text-[#252525]">VESANT,</span> we offer advanced solutions for high-risk industries. 
               Our compliance platform streamlines regulatory processes, 
               helping businesses meet strict standards while reducing risks. 
