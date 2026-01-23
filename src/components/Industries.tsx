@@ -4,7 +4,7 @@ import { Pagination } from "swiper/modules";
 import { IndustryCard } from "./ui/IndustryCard";
 
 // Swiper Styles
-import "swiper/css";
+import 'swiper/css';
 import "swiper/css/pagination";
 
 const INDUSTRIES = [
